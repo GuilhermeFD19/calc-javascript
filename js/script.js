@@ -2,23 +2,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var tela = document.getElementById("tela");
 
-    //Array de elementos que receber uma listener
+
     var listenerBtn = [];
 
-    //teclas adicionais do teclado
     var btnResultado = document.getElementById("resultado");
     var btnLimparTela = document.getElementById("limparTela");
     var btnApagarAnterior = document.getElementById("apagarAnterior");
 
     listenerBtn.push(document.getElementById("ponto"));
 
-    //teclas dos operadores
+    
     listenerBtn.push(document.getElementById("soma"));
     listenerBtn.push(document.getElementById("subtracao"));
     listenerBtn.push(document.getElementById("divisao"));
     listenerBtn.push(document.getElementById("multiplicacao"));
 
-    //teclas númericas da calculadora
+   
     listenerBtn.push(document.getElementById("num0"));
     listenerBtn.push(document.getElementById("num1"));
     listenerBtn.push(document.getElementById("num2"));
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     listenerBtn.push(document.getElementById("num8"));
     listenerBtn.push(document.getElementById("num9"));
 
-    //Adicionando evento de click
+
     for (var i = 0; i < listenerBtn.length; i++) {
         listenerBtn[i].addEventListener("click", passarValorTela);
     }
@@ -61,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (verificarOperador(this.value)) {
             var aux = tela.value.substring(tela.value.length - 1, tela.value.length);
-            //subtituir o valor do operador pelo atual
+         
             if (verificarOperador(aux)) {
                 apagarAnterior();
             }
